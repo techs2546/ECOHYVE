@@ -55,10 +55,13 @@
 <mat-sidenav-content class="">
 
         <mat-toolbar class ='shadow bg-light mb-3' style="height: 61px;">
-            <p>
-                <mat-icon class = "toggle" (click)="opened=!opened"  *ngIf = "mobile">menu</mat-icon>
+            <span>
+                <mat-icon class = "toggle mt-2" (click)="opened=!opened"  *ngIf = "mobile">menu</mat-icon>
+                
+            </span>
+            <span>
                 <span style="padding-left: 10px;">{{title}}</span>
-            </p>
+            </span>
         </mat-toolbar>
     <div class="container-fluid h-100 position-relative">
         <router-outlet></router-outlet>

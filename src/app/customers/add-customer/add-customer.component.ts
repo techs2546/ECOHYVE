@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -8,13 +9,18 @@ import Swal from 'sweetalert2'
 })
 export class AddCustomerComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router) { }
+  
   ngOnInit(): void {
   }
 
+  on(url:string){
+    this.router.navigateByUrl(url)
+  }
+
   submit(){
-    Swal.fire("Success",'Your work has been saved','success')
+    Swal.fire({title:"Success",text:'Your work has been saved',icon:'success',showConfirmButton: false,
+    timer: 800})
   }
 
 }

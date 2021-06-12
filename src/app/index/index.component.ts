@@ -10,7 +10,7 @@ export class IndexComponent implements OnInit {
   title = 'ECOHYVE';
   opened = true;
   mobile = false;
-  over = 'over';
+
   
 
   constructor() {

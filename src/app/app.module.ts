@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IndexComponent } from './index/index.component';
 import {MatInputModule} from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider';
+
 import { CustomersComponent } from './customers/customers.component';
 import { HelpComponent } from './help/help.component';
 import { MessageComponent } from './message/message.component';
@@ -35,7 +37,8 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule
 
   ],
   providers: [],
