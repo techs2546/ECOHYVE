@@ -1,0 +1,71 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [mode] = "Width('none')? 'over': 'side' " [(opened)] = "opened">
+        <ul>
+            <li>
+                <a routerLink="">
+                <span class="icon"><img src="../assets/image/idiot.jpeg" alt="..." class="rounded-circle" style="height: 40px;
+                    width: 45px;" > </span> 
+                <span class="title"id = "titlename" style="padding-top: 12px;"><h2>ECOHYVE</h2></span>
+                
+            </a>
+            <hr style="background-color:white;">
+            
+            </li>
+            
+            <li>
+                <a routerLink="Dashboard" (click) = "Width('Dashboard')? sidenav.close(): sidenav.open()">
+                <span class="icon"><mat-icon class="fa">dashboard</mat-icon>
+                </span>
+                <span class="title">Dashboard</span>
+            </a>
+            </li>
+            <li>
+                <a routerLink="customers"(click) = "Width('Customers')? sidenav.close(): sidenav.open() ">
+                <span class="icon"><mat-icon class="fa">supervisor_account</mat-icon></span>
+                <span class="title">Customers</span>
+            </a>
+            </li>
+            <li>
+                <a routerLink="Message" (click) = "Width('Message')? sidenav.close(): sidenav.open()">
+                <span class="icon"><mat-icon class="fa">message</mat-icon></span>
+                <span class="title">Message</span>
+            </a>
+            </li>
+            <li>
+                <a routerLink="Help" (click) = "Width('Help')? sidenav.close(): sidenav.open()">
+                <span class="icon"><mat-icon class="fa">help</mat-icon></span>
+                <span class="title">Help</span>
+            </a>
+            </li>
+            <li>
+                <a routerLink="Setting" (click) = "Width('Settings')? sidenav.close(): sidenav.open()">
+                <span class="icon"><mat-icon class="fa">settings</mat-icon></span>
+                <span class="title">Settings</span>
+            </a>
+            </li>
+            <li>
+                <a routerLink="/" (click) = "Width('none')? sidenav.close(): sidenav.open()">
+                <span class="icon"><mat-icon class="fa">logout</mat-icon></span>
+                <span class="title">Sign Out</span>
+            </a>
+            </li>
+            
+        </ul>
+    </mat-sidenav>
+<mat-sidenav-content class="">
+
+        <mat-toolbar class ='shadow bg-light mb-3' style="height: 61px;">
+            <p>
+                <mat-icon class = "toggle" (click)="opened=!opened"  *ngIf = "mobile">menu</mat-icon>
+                <span style="padding-left: 10px;">{{title}}</span>
+            </p>
+        </mat-toolbar>
+    <div class="container-fluid h-100 position-relative">
+        <router-outlet></router-outlet>
+    </div>
+  
+  
+</mat-sidenav-content>
+</mat-sidenav-container>
+    
+   

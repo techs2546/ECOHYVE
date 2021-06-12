@@ -1,0 +1,25 @@
+#search_customer{
+    width:250px;
+}
+
+input{
+  outline:none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  
+  
+
+}
+
+.add-customer{
+    cursor: pointer;
+}
+
+@media only screen and (max-width:760px) {
+    #search_customer{
+        width:auto;
+        float: left;
+        margin-left: 0;
+    }
+}
