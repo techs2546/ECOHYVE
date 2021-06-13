@@ -8,11 +8,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HelpComponent } from './help/help.component';
 import { IndexComponent } from './index/index.component';
 import { MessageComponent } from './message/message.component';
+import { OrdersComponent } from './orders/orders.component';
 import { SettingComponent } from './setting/setting.component';
 const routes: Routes = [
   
   
-
+   {
+     path:'orders',
+     component:OrdersComponent
+   },
   {
     path:'Dashboard',
     component:DashboardComponent

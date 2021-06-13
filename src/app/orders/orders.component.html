@@ -1,0 +1,20 @@
+<nav aria-label="breadcrumb" class="px-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" style="cursor: pointer;"><a (click)= "on('Dashboard')">home</a></li> 
+      <li class="breadcrumb-item active" aria-current="page">orders</li>
+    </ol>
+  </nav>
+
+
+
+<div class="container-fluid p-0" style="height:100%">
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+        <mat-tab label="Bed & Pillow"> 
+        <app-bedpillow></app-bedpillow>
+        
+        </mat-tab>
+        <mat-tab label="Sofa & Cushion "> <app-sofacushion></app-sofacushion> </mat-tab>
+        <mat-tab label=" Netlon "><app-netlon></app-netlon></mat-tab>
+    </mat-tab-group>
+
+</div>

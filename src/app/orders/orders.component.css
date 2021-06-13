@@ -1,0 +1,14 @@
+
+@media only  screen and (max-width:800px) {
+ 
+.example-stretched-tabs {
+  max-width: 800px;
+  
+} 
+}
+example-stretched-tabs {
+  max-width: 100%;
+
+  
+} 
+ 
