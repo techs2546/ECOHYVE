@@ -2,102 +2,48 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Select Customer</mat-label>
-                            <mat-select>
-                              <mat-option value="one">Simon</mat-option>
-                              <mat-option value="two">Andrews Jacob</mat-option>
-                              <mat-option value="three">Simon Arnold</mat-option>
-                              <mat-option value="four">Jack Sparrow</mat-option>
-                              <mat-option value="five">Flecther</mat-option>
+                            <mat-label >Select Customer</mat-label>
+                            <mat-select [(value)]='id'>
+                              <mat-option value="SI20221452">Simon</mat-option>
+                              <mat-option value="AJ20288754">Andrews Jacob</mat-option>
+                              <mat-option value="SA20298876">Simon Arnold</mat-option>
+                              <mat-option value="JS20246793">Jack Sparrow</mat-option>
+                              <mat-option value="FL20256784">Flecther</mat-option>
                             </mat-select>
                           </mat-form-field>
                     </div>
                     <div class="col-md-6 mb-3 mt-2">
                         <mat-form-field class="example-full-width" style="width:100%">
                             <mat-label>Customer Id</mat-label>
-                            <input matInput readonly = 'true' value="RSS20219876">
+                            <input matInput readonly = 'true' value="RSS20219876" [(ngModel)]='id'>
                           </mat-form-field>
                     </div>
                 </div>
                 <mat-label class="bed" style="font-size: large;">Bed</mat-label>
                 <mat-divider [inset]='true' class="mb-3"></mat-divider>
                
-
-                <mat-list role="list" *ngIf = "windows>800" >
-                  <mat-list-item role="listitem" class="my-5 "  *ngFor = "let item of items">
-                    <div class="row">
-                      <div class="col">
-                        <mat-form-field style="width: 150px;">
-                          <mat-label>Type</mat-label>
-                          <mat-select >
-                            <mat-option value = "Alter">Alter</mat-option>
-                            <mat-option value = "New">New</mat-option>
-                          </mat-select>
-                        </mat-form-field>
-                      </div>
-                      <div class="col">
-                        <mat-form-field style="width: 150px;">
-                          <mat-label>Condition</mat-label>
-                          <mat-select >
-                            <mat-option value = "20%">20%</mat-option>
-                            <mat-option value = "40%">40%</mat-option>
-                            <mat-option value = "60%">60%</mat-option>
-                            <mat-option value = "80%">80%</mat-option>
-                          </mat-select>
-                        </mat-form-field>
-                      </div>
-                      <div class="col">
-                        <mat-form-field style="width: 150px;">
-                          <mat-label>Cloth</mat-label>
-                          <mat-select >
-                            <mat-option value = "HandLoom">HandLoom</mat-option>
-                            <mat-option value = "Printed">Printed</mat-option>
-                          </mat-select>
-                        </mat-form-field>
-                      </div>
-                      <div class="col">
-                        <mat-form-field class="example-full-width" style="width: 150px;">
-                          <mat-label>Width (inches)</mat-label>
-                          <input matInput>
-                        </mat-form-field>
-                      </div>
-                      <div class="col">
-                        <mat-form-field class="example-full-width" style="width: 150px;">
-                          <mat-label>Length (inches)</mat-label>
-                          <input matInput type="text">
-                        </mat-form-field>
-                      </div>
-                      <div class="col">
-                        <mat-form-field class="example-full-width" style="width: 150px;">
-                          <mat-label>Thickness (inches)</mat-label>
-                          <input matInput type="text">
-                        </mat-form-field>
-                      </div>
-      
-                    </div>
-                  </mat-list-item>
-            
-                  <p class=" d-flex justify-content-end mb-3">
-                    <mat-icon class="mt-3" style="color: seagreen;" (click)="add()">add_circle</mat-icon>&nbsp;&nbsp;
-                    <mat-icon class="mt-3" style="color:#DC143C	;" (click)="remove()">highlight_off</mat-icon>
-                  </p>
-                </mat-list>
-                <div class="" *ngIf = "windows<800" >
-                  <div class=""  *ngFor = "let item of items">
+                <div class="sub-part bed">
+                  <div class="sub-sub-part bed"  *ngFor = "let item of items">
                   <div class="row">
+                    
+                    
                     <div class="col">
-                      <mat-form-field style="width: 150px;">
+                      
+                        <span class="px-2">{{item.no}}</span>
+                      <mat-form-field style="width: 110px;">
                         <mat-label>Type</mat-label>
-                        <mat-select >
+                        <mat-select [(value)]='item.type' >
                           <mat-option value = "Alter">Alter</mat-option>
                           <mat-option value = "New">New</mat-option>
                         </mat-select>
                       </mat-form-field>
+                    
                     </div>
                     <div class="col">
-                      <mat-form-field style="width: 150px;">
+                      
+                      <mat-form-field  style="width: 120px;">
                         <mat-label>Condition</mat-label>
-                        <mat-select >
+                        <mat-select [disabled]="item.type =='New'">
                           <mat-option value = "20%">20%</mat-option>
                           <mat-option value = "40%">40%</mat-option>
                           <mat-option value = "60%">60%</mat-option>
@@ -106,7 +52,8 @@
                       </mat-form-field>
                     </div>
                     <div class="col">
-                      <mat-form-field style="width: 150px;">
+                      <span class="px-2"  *ngIf = "windows<800"></span>
+                      <mat-form-field  style="width: 120px;">
                         <mat-label>Cloth</mat-label>
                         <mat-select >
                           <mat-option value = "HandLoom">HandLoom</mat-option>
@@ -121,13 +68,14 @@
                       </mat-form-field>
                     </div>
                     <div class="col">
-                      <mat-form-field class="example-full-width" style="width: 150px;">
+                      <span class="px-2" *ngIf = "windows<800"></span>
+                      <mat-form-field class="example-full-width" style="width: 140px;">
                         <mat-label>Length (inches)</mat-label>
                         <input matInput type="text">
                       </mat-form-field>
                     </div>
-                    <div class="col">
-                      <mat-form-field class="example-full-width" style="width: 150px;">
+                    <div class="col d-flex justify-content-between">
+                      <mat-form-field class="example-full-width" style="width: 140px;">
                         <mat-label>Thickness (inches)</mat-label>
                         <input matInput type="text">
                       </mat-form-field>
@@ -139,7 +87,7 @@
                   
                 </div>
                 <p class=" d-flex justify-content-end mb-3">
-                  <mat-icon class="mt-3" style="color: seagreen;" (click)="add()">add_circle</mat-icon>&nbsp;&nbsp;
+                  <mat-icon class="mt-3" style="color: seagreen; " (click)="add()">add_circle</mat-icon>&nbsp;&nbsp;
                   <mat-icon class="mt-3" style="color:#DC143C	;" (click)="remove()">highlight_off</mat-icon>
                 </p>
               </div>
@@ -151,7 +99,7 @@
             
 
                 
-                  <div role="listitem" *ngFor = "let item of items">
+                  <div role="listitem" *ngFor = "let item of items2">
                     <div class="row">
                       <div class="col-md-6">
                         <mat-form-field class="w-100">
@@ -178,8 +126,8 @@
                   </div>
             
                   <p class=" d-flex justify-content-end mb-3">
-                    <mat-icon class="mt-3"  style="color: seagreen;" (click)="add()">add_circle</mat-icon>&nbsp;&nbsp;
-                    <mat-icon class="mt-3" style="color:#DC143C	;" (click)="remove()">highlight_off</mat-icon>
+                    <mat-icon  class=" mt-3"  style="color: seagreen; outline: none;" (click)="add2()">add_circle</mat-icon>&nbsp;&nbsp;
+                    <mat-icon  class="mt-3" style="color:#DC143C; outline: none;" (click)="remove2()">highlight_off</mat-icon>
                   </p>
               
 

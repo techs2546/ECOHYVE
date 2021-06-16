@@ -4,4 +4,6 @@ table {
 
 mat-icon{
   cursor: pointer;
+  background: none;
 }
+
