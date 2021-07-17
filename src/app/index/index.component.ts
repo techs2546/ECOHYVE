@@ -1,14 +1,15 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { startWith, tap, delay } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements AfterViewInit,OnInit {
+export class IndexComponent implements OnInit {
+  windows:any
   @ViewChild(MatSidenav) titleRef!: MatSidenav;
 
   @HostListener('window:resize')
@@ -30,35 +31,18 @@ export class IndexComponent implements AfterViewInit,OnInit {
 
   }
   title = 'ECOHYVE';
-  mobile_view = false
+  mobile_view = true;
 
 
   constructor(private oberserver: BreakpointObserver) {
    
-    
+    this.windows = window.innerWidth
     
   }
 
 
 
-  ngAfterViewInit(): void {
-
-    this.oberserver.observe(['(max-width:800px)']).subscribe((res)=>{
-      if (res.matches){
-            
-        this.titleRef.mode = 'over';
-        this.titleRef.close() 
-        this.mobile_view = true} 
-      else{
-         
-        this.titleRef.mode='side';
-        this.titleRef.open();
-        this.mobile_view = false
-
-
-      }
-    });
-   }
+  
 
 
 

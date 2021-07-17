@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode='side' opened>
+    <mat-sidenav #sidenav [mode]='windows < 800? "over":"side"' [opened]="windows < 800 ? false:true">
         <ul>
             <li>
                 <a routerLink="">
@@ -65,7 +65,7 @@
 
         <mat-toolbar class ='shadow bg-light mb-3' style="height: 61px;">
             <span>
-                <mat-icon class = "toggle mt-2" (click)="sidenav.toggle()" *ngIf = "mobile_view">menu</mat-icon>
+                <mat-icon class = "toggle mt-2" (click)="sidenav.toggle()" [attr.disabled]= 'windows < 800 ? mobile_view:!mobile_view' *ngIf = "mobile_view">menu</mat-icon>
                 
             </span>
             <span>
