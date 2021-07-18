@@ -6,17 +6,36 @@
   </nav>
 
 <div class="container-fluids">
-    <div class="row px-5">
+    <div class="row px-3  pr - 2 mb-5">
         <div class="col">
-                <form class="form-inline">
-                    <input class="form-control form-control-sm " id = "search_customer" type="text" placeholder="Search here..."
-                  aria-label="Search"   name="Search here...">
-                </form>
-            
+          <div class="container">
+            <input type="text" class="container__input" placeholder="Search___" />
+          </div>
         </div>
         <div class="col d-flex flex-row-reverse">
             <mat-icon class="add-customer float-right"  style="font:bold;font-size: 30px;" routerLink = "new">add</mat-icon>
         </div>
     </div>
-    
-</div>
+  </div>
+    <table class="m-1">
+      <thead>
+        <tr>
+          
+          <th scope="col">Customer Id</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Category</th>
+        </tr> 
+      </thead>
+      <tbody>
+        <tr *ngFor = "let item of customerData; index as i" routerLink="">
+          <td data-title="Customer Id" >{{item.CustomerId}}</td>
+          <td data-title="Customer Name">{{item.CustomerName}}</td>
+          <td data-title="Phone" >{{item.CustomerPhone1}}</td>
+          <td data-title="Category">Newer</td>
+
+        </tr>
+        
+      </tbody>
+    </table>
+

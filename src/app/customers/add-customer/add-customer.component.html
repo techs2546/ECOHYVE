@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb" class="px-3">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item" style="cursor: pointer;"><a (click)= "on('Dashboard')">home</a></li> 
-    <li class="breadcrumb-item" style="cursor: pointer;" ><a (click)= "on('customers')">customers</a></li>
+    <li class="breadcrumb-item" style="cursor: pointer;"><a (click)="on('Dashboard')">home</a></li>
+    <li class="breadcrumb-item" style="cursor: pointer;"><a (click)="on('customers')">customers</a></li>
     <li class="breadcrumb-item active" aria-current="page">new</li>
   </ol>
 </nav>
@@ -10,72 +10,77 @@
 
 <div class="container-fluid p-3">
 
-    <div class="row mb-4">
-        <div class="col-md-6">
-            
-                <mat-form-field class="example-full-width">
-                  <mat-label>Customer Name</mat-label>
-                  <input matInput placeholder="Enter name here...">
-                </mat-form-field>
-        </div>
-        <div class="col-md-6">
-            
-                <mat-form-field class="example-full-width">
-                  <mat-label>Customer ID</mat-label>
-                  <input matInput placeholder="" readonly='true' value="">
-                </mat-form-field>   
-        </div>
-    </div>
+  <div class="row mb-2">
+    <div class="col-md-6">
 
-    <div class="row mb-4">
-        <div class="col-md-6">
-            
-                <mat-form-field class="example-full-width">
-                  <mat-label>Address</mat-label>
-                  <textarea matInput placeholder="Enter name here..."></textarea>
-                </mat-form-field>
-        </div>
-        <div class="col-md-6 mt-3">
-                <mat-form-field class="example-full-width">
-                  <mat-label>Email ID</mat-label>
-                  <input matInput placeholder="Enter mail id here..."  value="">
-                </mat-form-field>   
-        </div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Customer Name</mat-label>
+        <input matInput placeholder="Enter name here...">
+      </mat-form-field>
     </div>
+    <div class="col-md-6">
 
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Contact 1</mat-label>
-              <input type="text" matInput placeholder="Enter phone 1 here">
-            </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Customer ID</mat-label>
+        <input matInput placeholder="" readonly='true' value="">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Location</mat-label>
+        <input type="text" matInput placeholder="Enter Location here">
+      </mat-form-field>
     </div>
 
     <div class="col-md-6">
-            
-        <mat-form-field class="example-full-width">
-          <mat-label>Contact 2</mat-label>
-          <input type="text" matInput placeholder="Enter phone 1 here">
-        </mat-form-field>
-</div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email ID</mat-label>
+        <input matInput placeholder="Enter mail id here..." value="">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="Contact 1">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
     </div>
 
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Location</mat-label>
-              <input type="text" matInput placeholder="Enter phone 1 here">
-            </mat-form-field>
-        </div>
+    <div class="col-md-6">
 
-        <div class="col-md-6">
-            
-        <mat-form-field class="example-full-width">
-          <mat-label>Date</mat-label>
-          <input type="date" matInput placeholder="Enter phone 1 here">
-        </mat-form-field>
-        </div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" matInput placeholder="Contact 2">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
     </div>
-<div class="btn btn-success w-50 "  (click)="submit()" style="margin-left: 25%;">Submit</div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Enter name here..."></textarea>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-md-6 mt-3">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Date</mat-label>
+        <input type="date" matInput placeholder="Enter phone 1 here">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="btn btn-success w-50 " (click)="submit()" style="margin-left: 25%;">Submit</div>
 
 </div>

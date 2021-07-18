@@ -27,6 +27,8 @@ import { SofacushionComponent } from './orders/sofacushion/sofacushion.component
 import { NetlonComponent } from './orders/netlon/netlon.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CustomerApiServiceService } from './customers/customer-api-service.service';
 
 
 
@@ -63,13 +65,14 @@ import {MatButtonModule} from '@angular/material/button';
     MatSelectModule,
     MatListModule,
     MatTableModule,
+    HttpClientModule,
     MatButtonModule
 
     
   
 
   ],
-  providers: [],
+  providers: [CustomerApiServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

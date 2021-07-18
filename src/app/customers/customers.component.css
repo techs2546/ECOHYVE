@@ -1,25 +1,101 @@
-#search_customer{
-    width:250px;
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.container__input {
+    border-color: transparent;
+    flex: 1;
 }
 
 input{
+    float:left;
   outline:none;
   border-left: none;
   border-top: none;
   border-right: none;
-  
-  
+}
 
+thead {
+    box-shadow: 0 5px 10px #e1e5ee;;
+  }
+
+table {
+    width:100%;
+    box-shadow: 0 5px 10px;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 1rem;
+    line-height: 2.5;
+    font-weight: 400;
+    font-size: 1rem;
+    border-collapse: collapse;
+    background-color: white;
+    overflow: hidden;
+    
+    box-shadow:0px 4px 20px rgba(5,57,94,0.5);
+    -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
+    -webkit-box-shadow:0px 4px 20px rgba(5,57,94,.5); ;
+}
+
+tbody tr:hover{
+    background-color:#E0E0E0;
+}
+
+th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+
+  td {
+    padding: 1rem 2rem;
+  }
+
+
+@media screen and (max-width:800px){
+    table{max-width: 800px;overflow:hidden;}
+    table thead{display:none;}
+    table{box-shadow: none;}
+    table tbody{padding:0 16px;}
+    table tbody, table tbody tr{display: block; width:100%;background: #f2f2f2;}
+    table tbody tr th::before, table tbody tr td::before{content: attr(data-title);display:block;font-weight: 400;font-size:14px;color:rgba(0,0,0,1)}
+    table tbody tr td ,table tbody tr th  {display:block;width:50%;float:left;font-size:14px;color:rgba(100,100,100, 1);font-weight: 500;}
+    table tbody tr{margin-bottom: 16px;clear: both;float:left; 
+    box-shadow:0px 4px 10px rgba(5, 57, 94, .5);
+    -moz-box-shadow: 0px 4px 10px rgba(5, 57, 94, .5);
+    -webkit-box-shadow:0px 4px 10px rgba(5, 57, 94, .5); 
+    }
+
+    td{
+        padding: 0.5rem 1rem;
+    }
+
+
+}
+
+.header {
+    
+    background-color: #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
 .add-customer{
     cursor: pointer;
 }
 
-@media only screen and (max-width:760px) {
-    #search_customer{
-        width:auto;
-        float: left;
-        margin-left: 0;
-    }
-}
+@media only screen and (max-width:800px) {
+
+.container__input {
+    border-color: transparent;
+    flex: 1;
+    width:150px;
+
+  
+}}

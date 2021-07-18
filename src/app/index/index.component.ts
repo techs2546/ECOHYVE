@@ -31,12 +31,15 @@ export class IndexComponent implements OnInit {
 
   }
   title = 'ECOHYVE';
-  mobile_view = true;
+  mobile_view = false;
 
 
   constructor(private oberserver: BreakpointObserver) {
    
     this.windows = window.innerWidth
+    if (this.windows < 800){
+      this.mobile_view=true;
+    }
     
   }
 

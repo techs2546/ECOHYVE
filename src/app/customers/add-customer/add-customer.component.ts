@@ -19,8 +19,11 @@ export class AddCustomerComponent implements OnInit {
   }
 
   submit(){
-    Swal.fire({title:"Success",text:'Your work has been saved',icon:'success',showConfirmButton: false,
-    timer: 800})
+    Swal.fire({title:"Success",text:'Your work has been saved',icon:'success',showConfirmButton: true}).then((result)=>{
+      if (result.isConfirmed){
+      this.router.navigateByUrl('/customers')  
+      }})
+
   }
 
 }
