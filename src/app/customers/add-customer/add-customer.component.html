@@ -9,20 +9,20 @@
 
 
 <div class="container-fluid p-3">
-
+<form [formGroup]="customerForm" (ngSubmit) = "submit()">
   <div class="row mb-2">
     <div class="col-md-6">
 
       <mat-form-field class="example-full-width">
         <mat-label>Customer Name</mat-label>
-        <input matInput placeholder="Enter name here...">
+        <input matInput placeholder="Enter name here..." formControlName="CustomerName">
       </mat-form-field>
     </div>
     <div class="col-md-6">
 
       <mat-form-field class="example-full-width">
         <mat-label>Customer ID</mat-label>
-        <input matInput placeholder="" readonly='true' value="">
+        <input matInput placeholder="" formControlName="CustomerId"  value="">
       </mat-form-field>
     </div>
   </div>
@@ -31,15 +31,17 @@
     <div class="col-md-6">
       <mat-form-field class="example-full-width">
         <mat-label>Location</mat-label>
-        <input type="text" matInput placeholder="Enter Location here">
+        <input type="text" matInput formControlName="CustomerLocationUrl" placeholder="Enter Location here">
       </mat-form-field>
     </div>
 
     <div class="col-md-6">
       <mat-form-field class="example-full-width">
         <mat-label>Email ID</mat-label>
-        <input matInput placeholder="Enter mail id here..." value="">
+        <input matInput placeholder="Enter mail id here..." formControlName="CustomerEmail" value="">
+
       </mat-form-field>
+      <span style="font-size:10px;" *ngIf="customerForm.errors?.email">Enter Mail Id</span>
     </div>
   </div>
 
@@ -47,7 +49,7 @@
     <div class="col-md-6">
       <mat-form-field class="example-full-width" appearance="fill">
         <span matPrefix>+91 &nbsp;</span>
-        <input type="tel" matInput placeholder="Contact 1">
+        <input type="tel" matInput placeholder="Contact 1" formControlName="CustomerPhone1">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
 
@@ -57,7 +59,7 @@
 
       <mat-form-field class="example-full-width" appearance="fill">
         <span matPrefix>+91 &nbsp;</span>
-        <input type="tel" matInput placeholder="Contact 2">
+        <input type="tel" matInput placeholder="Contact 2" formControlName="CustomerPhone2">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
     </div>
@@ -67,7 +69,7 @@
     <div class="col-md-6">
       <mat-form-field class="example-full-width">
         <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Enter name here..."></textarea>
+        <textarea matInput placeholder="Enter name here..." formControlName="CustomerAddress"></textarea>
       </mat-form-field>
     </div>
 
@@ -76,11 +78,11 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Date</mat-label>
-        <input type="date" matInput placeholder="Enter phone 1 here">
+        <input type="date" matInput placeholder="Enter TargetDate here" formControlName="CustomerTargetDate">
       </mat-form-field>
     </div>
   </div>
 
-  <div class="btn btn-success w-50 " (click)="submit()" style="margin-left: 25%;">Submit</div>
-
+  <button class="btn btn-success w-50 " [disabled] = "!customerForm.valid" style="margin-left: 25%;">Submit</button>
+</form>
 </div>

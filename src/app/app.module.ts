@@ -29,7 +29,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomerApiServiceService } from './customers/customer-api-service.service';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -66,7 +66,8 @@ import { CustomerApiServiceService } from './customers/customer-api-service.serv
     MatListModule,
     MatTableModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
 
     
   

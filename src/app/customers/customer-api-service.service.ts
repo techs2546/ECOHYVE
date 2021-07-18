@@ -16,4 +16,8 @@ export class CustomerApiServiceService {
     return this.http.get(this.base_url + "customer-form/",{headers:this.httpHeaders} )
   }
 
+  PostCustomerDetail(data:any):Observable<any>{
+    return this.http.post(this.base_url+"customer-form/",data,{headers:this.httpHeaders})
+  }
+
 }
