@@ -1,0 +1,60 @@
+
+<h1 style="text-align: center;">
+    {{data.Id}}
+</h1>
+
+<h3 style="text-align: center;" *ngIf = "isloaded">
+    {{CustomerData.CustomerName}}
+</h3>
+
+<h5 style="text-align: center;" *ngIf = "isloaded">
+    {{CustomerData.CustomerPhone1}}
+</h5>
+<div class="row mb-3"  *ngIf = "isloaded">
+    <div class="col">
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Work Person</mat-label>
+            <mat-select >
+              <mat-option value="Gopal">Gopal</mat-option>
+              <mat-option value="Sundar" >Sundar</mat-option>
+              <mat-option value="Ram">Ram</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="example-full-width w-100">
+        <mat-label>Customer ID</mat-label>
+        <input matInput placeholder=""   readonly="true" value="{{CustomerData.CustomerId}}">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row mb-3"  *ngIf = "isloaded">
+    <div class="col mt-2">
+      <mat-form-field class="example-full-width w-100">
+        <mat-label>Order Id</mat-label>
+        <input type="text" matInput readonly value="ORD12345" placeholder="Enter Location here">
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Category</mat-label>
+            <mat-select [formControl]="toppings" multiple>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+      <span style="font-size:10px;" *ngIf="false">Enter Mail Id</span>
+    </div>
+    
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <button mat-raised-button class="bg-success" style="float: right; text-align:center;">Submit</button>
+    </div>
+    <div class="col">
+      <button mat-raised-button class="bg-danger " style="text-align:center;">Cancel</button>
+    </div>
+  </div>

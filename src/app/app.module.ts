@@ -30,6 +30,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomerApiServiceService } from './customers/customer-api-service.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
+import { AssignOrderComponent } from './orders/assign-order/assign-order.component';
+import { OrderApiServiceService } from './orders/order-api-service.service';
 
 
 
@@ -47,7 +52,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     OrdersComponent,
     BedpillowComponent,
     SofacushionComponent,
-    NetlonComponent
+    NetlonComponent,
+    ViewCustomerComponent,
+    AssignOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +66,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatInputModule,
     MatDividerModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatTabsModule,
     MatOptionModule,
@@ -73,7 +81,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   
 
   ],
-  providers: [CustomerApiServiceService],
+  providers: [CustomerApiServiceService,
+              OrderApiServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

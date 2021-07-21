@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { CustomerApiServiceService } from '../customer-api-service.service';
 import { FormGroup,FormControl,FormBuilder, Validators } from '@angular/forms';
-import { validateVerticalPosition } from '@angular/cdk/overlay';
+
 @Component({
   selector: 'app-add-customer',
   templateUrl: './add-customer.component.html',
@@ -11,6 +11,33 @@ import { validateVerticalPosition } from '@angular/cdk/overlay';
 })
 export class AddCustomerComponent implements OnInit {
   customerForm!:FormGroup;
+  date = new Date() 
+  idValue:any
+  TrackingPhone(number:any):void {
+  
+    this.customerForm.patchValue({
+      CustomerId:this.idValue+ number.toString().slice(-5)
+    })
+  }
+  
+
+  
+
+  TrackingName(data:string): void {
+    if (data != ""){
+      this.idValue= this.date.getFullYear().toString().slice(-2)+("0"+(this.date.getMonth()+1)).slice(-2)+data[0].toUpperCase()+data[data.length-1].toUpperCase()
+      this.customerForm.patchValue({
+      CustomerId:this.idValue
+    })
+    
+  }
+  else {
+    this.customerForm.patchValue({
+      CustomerId:""
+    })
+    console.log(data)
+  }
+}
   constructor(private router:Router,private formBuilder:FormBuilder,private service :CustomerApiServiceService)
   {
     this.customerForm = formBuilder.group(

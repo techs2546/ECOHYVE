@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 import { CustomersComponent } from './customers/customers.component';
+import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HelpComponent } from './help/help.component';
@@ -29,6 +30,12 @@ const routes: Routes = [
     path:'customers/new',
     component:AddCustomerComponent
   },
+  {
+    path:'customers/edit',
+    component:ViewCustomerComponent
+  },
+
+
   {
     path:'Message',
     component:MessageComponent

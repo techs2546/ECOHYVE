@@ -15,14 +15,14 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Customer Name</mat-label>
-        <input matInput placeholder="Enter name here..." formControlName="CustomerName">
+        <input matInput placeholder="Enter name here..." (input)="TrackingName(customerForm.value.CustomerName)" formControlName="CustomerName">
       </mat-form-field>
     </div>
     <div class="col-md-6">
 
       <mat-form-field class="example-full-width">
         <mat-label>Customer ID</mat-label>
-        <input matInput placeholder="" formControlName="CustomerId"  value="">
+        <input matInput placeholder="" formControlName="CustomerId"  value="id" readonly >
       </mat-form-field>
     </div>
   </div>
@@ -49,7 +49,7 @@
     <div class="col-md-6">
       <mat-form-field class="example-full-width" appearance="fill">
         <span matPrefix>+91 &nbsp;</span>
-        <input type="tel" matInput placeholder="Contact 1" formControlName="CustomerPhone1">
+        <input type="tel" matInput placeholder="Contact 1"(input)="TrackingPhone(customerForm.value.CustomerPhone1)"  formControlName="CustomerPhone1">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
 

@@ -21,18 +21,23 @@
       <thead>
         <tr>
           
-          <th scope="col">Customer Id</th>
-          <th scope="col">Customer Name</th>
+          <th scope="col">Customer <br> Id</th>
+          <th scope="col">Customer <br> Name</th>
           <th scope="col">Phone</th>
-          <th scope="col">Category</th>
+          <th scope="col">Status</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Assign <br> Order</th>
         </tr> 
       </thead>
       <tbody>
-        <tr *ngFor = "let item of customerData; index as i" routerLink="">
+        <tr *ngFor = "let item of customerData; index as i">
           <td data-title="Customer Id" >{{item.CustomerId}}</td>
           <td data-title="Customer Name">{{item.CustomerName}}</td>
           <td data-title="Phone" >{{item.CustomerPhone1}}</td>
-          <td data-title="Category">Newer</td>
+          <td data-title="Status"><p style="background-color: aquamarine; text-align: center;">Added</p></td>
+          <td data-title="Edit"><mat-icon routerLink="edit" style="cursor:pointer">add_box</mat-icon></td>
+          <td data-title="AssignOrder"><mat-icon (click)="openDialog(item.CustomerId)" style="cursor:pointer">input</mat-icon></td>
+
 
         </tr>
         
