@@ -30,6 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomerApiServiceService } from './customers/customer-api-service.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import {NgxSpinnerModule} from 'ngx-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import { ViewCustomerComponent } from './customers/view-customer/view-customer.component';
@@ -59,6 +60,7 @@ import { OrderApiServiceService } from './orders/order-api-service.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxSpinnerModule,
     MatIconModule,
     FormsModule,
     BrowserAnimationsModule,

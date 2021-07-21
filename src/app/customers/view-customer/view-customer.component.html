@@ -6,4 +6,93 @@
     </ol>
   </nav>
   
-<p>view-customer works!</p>
+<div class="container-fluid p-3">
+  <div class="d-flex justify-content-end">
+    <button mat-icon-button><mat-icon style="color: green;" (click)="modifydata()">edit</mat-icon></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-icon-button><mat-icon style="color: red;" (click)="deletedata()">delete</mat-icon></button>
+  </div>
+  <form [formGroup]="customerModifyForm" (ngSubmit) = "update()">
+    <div class="row mb-2">
+      <div class="col-md-6">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Customer Name</mat-label>
+          <input matInput placeholder="Enter name here..." readonly  formControlName="CustomerName">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Customer ID</mat-label>
+          <input matInput placeholder="" formControlName="CustomerId"  value="id" readonly >
+        </mat-form-field>
+      </div>
+    </div>
+  
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Location</mat-label>
+          <input type="text" matInput formControlName="CustomerLocationUrl" placeholder="Enter Location here">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email ID</mat-label>
+          <input matInput placeholder="Enter mail id here..." formControlName="CustomerEmail" value="">
+  
+        </mat-form-field>
+        <span style="font-size:10px;" *ngIf="customerModifyForm.errors?.email">Enter Mail Id</span>
+      </div>
+    </div>
+  
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput placeholder="Contact 1" readonly  formControlName="CustomerPhone1">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+  
+      </div>
+  
+      <div class="col-md-6">
+  
+        <mat-form-field class="example-full-width" appearance="fill">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput placeholder="Contact 2" formControlName="CustomerPhone2">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+  
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Address</mat-label>
+          <textarea matInput placeholder="Enter name here..." formControlName="CustomerAddress"></textarea>
+        </mat-form-field>
+      </div>
+  
+  
+      <div class="col-md-6 mt-3">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Date</mat-label>
+          <input type="date" matInput placeholder="Enter TargetDate here" formControlName="CustomerTargetDate">
+        </mat-form-field>
+      </div>
+    </div>
+  
+    <button class="btn btn-success w-50 " [disabled] = "!customerModifyForm.valid" style="margin-left: 25%;">Update</button>
+  </form>
+  <ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple"
+>
+<p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+</div>

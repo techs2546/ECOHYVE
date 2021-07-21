@@ -35,7 +35,7 @@
           <td data-title="Customer Name">{{item.CustomerName}}</td>
           <td data-title="Phone" >{{item.CustomerPhone1}}</td>
           <td data-title="Status"><p style="background-color: aquamarine; text-align: center;">Added</p></td>
-          <td data-title="Edit"><mat-icon routerLink="edit" style="cursor:pointer">add_box</mat-icon></td>
+          <td data-title="Edit"><mat-icon routerLink="edit/{{item.CustomerId}}" style="cursor:pointer">add_box</mat-icon></td>
           <td data-title="AssignOrder"><mat-icon (click)="openDialog(item.CustomerId)" style="cursor:pointer">input</mat-icon></td>
 
 
@@ -43,4 +43,13 @@
         
       </tbody>
     </table>
+    <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+  
+</ngx-spinner>
 

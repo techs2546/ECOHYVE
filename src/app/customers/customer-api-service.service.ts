@@ -16,8 +16,22 @@ export class CustomerApiServiceService {
     return this.http.get(this.base_url + "customer-form/",{headers:this.httpHeaders} )
   }
 
+  GetCustomerIdDetail(data:string):Observable<any>{
+    return this.http.get(this.base_url + "customer-form/"+data,{headers:this.httpHeaders} )
+  }
+  
+  DeleteCustomerIdDetail(data:string):Observable<any>{
+    return this.http.delete(this.base_url + "customer-form/"+data,{headers:this.httpHeaders} )
+  }
+
   PostCustomerDetail(data:any):Observable<any>{
     return this.http.post(this.base_url+"customer-form/",data,{headers:this.httpHeaders})
+  }
+
+  UpdateCustomerId(data:string,id:any):Observable<any>{
+
+    return this.http.put(this.base_url+"customer-form/"+id+"/",data,{headers:this.httpHeaders})
+
   }
 
 }

@@ -31,7 +31,7 @@ const routes: Routes = [
     component:AddCustomerComponent
   },
   {
-    path:'customers/edit',
+    path:'customers/edit/:id',
     component:ViewCustomerComponent
   },
 

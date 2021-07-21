@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { CustomerApiServiceService } from '../customer-api-service.service';
 import { FormGroup,FormControl,FormBuilder, Validators } from '@angular/forms';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-add-customer',
   templateUrl: './add-customer.component.html',
@@ -13,6 +13,7 @@ export class AddCustomerComponent implements OnInit {
   customerForm!:FormGroup;
   date = new Date() 
   idValue:any
+  
   TrackingPhone(number:any):void {
   
     this.customerForm.patchValue({
@@ -38,7 +39,7 @@ export class AddCustomerComponent implements OnInit {
     console.log(data)
   }
 }
-  constructor(private router:Router,private formBuilder:FormBuilder,private service :CustomerApiServiceService)
+  constructor(private router:Router,private spinner:NgxSpinnerService,private formBuilder:FormBuilder,private service :CustomerApiServiceService)
   {
     this.customerForm = formBuilder.group(
         {
@@ -65,13 +66,16 @@ export class AddCustomerComponent implements OnInit {
 
 
   submit(){
+    this.spinner.show();
     this.service.PostCustomerDetail(this.customerForm.value).subscribe(
       data =>{
+        this.spinner.hide();
         Swal.fire({title:"Success",text:'Your work has been saved',icon:'success',showConfirmButton: false,timer:1200}).then((result)=>{
           this.router.navigateByUrl('/customers');})
         
       },
       error=>{
+        this.spinner.hide();
         Swal.fire({title:"OOPS!",text:'Unable to add data',icon:'error',showConfirmButton: false,timer:1200})
           
         console.log(error)
