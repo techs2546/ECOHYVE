@@ -80,7 +80,7 @@ else {
       Swal.fire({
           
         title:'Failed to Load',
-        text: 'Please, verfiy customer existing in server',
+        text: 'Please verfiy customer existing in server',
         icon:'error',
         showClass: {popup: 'animate__animated animate__fadeInDown'},
         hideClass: {popup: 'animate__animated animate__fadeOutUp'}
@@ -114,7 +114,7 @@ else {
       Swal.fire({
        
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Your work has been done',
         showConfirmButton: false,
         timer: 1500
       }).then((result)=>{
@@ -151,12 +151,32 @@ else {
 
   update():void{
     this.spinner.show();
-    this.service.UpdateCustomerId(this.customerModifyForm.value,this.customerModifyForm.get("CustomerId")?.value).subscribe(data=>{
+    this.service.UpdateCustomerId(this.customerModifyForm.value,this.customerModifyForm.get("CustomerId")?.value).subscribe(
+      data=>{
       this.spinner.hide();
+      Swal.fire({
+       
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      }).then((result)=>{
+
+        this.router.navigateByUrl('customers');
+
+      })
+
     },
     error=>{
       this.spinner.hide();
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Your work has not been done',
+        showConfirmButton: false,
+        timer: 1500
+      }).then((result)=>{
+        this.router.navigateByUrl('customers');
+      })
       
     })
   }

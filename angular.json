@@ -76,8 +76,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ECOHYVE:build",
-            "port": 4200,
-            "host": "192.168.1.38"
+            "port":4200,
+            "host":"192.168.1.38"
           },
           "configurations": {
             "production": {

@@ -28,8 +28,8 @@ export class CustomerApiServiceService {
     return this.http.post(this.base_url+"customer-form/",data,{headers:this.httpHeaders})
   }
 
-  UpdateCustomerId(data:string,id:any):Observable<any>{
-
+  UpdateCustomerId(data:any,id:string):Observable<any>{
+    
     return this.http.put(this.base_url+"customer-form/"+id+"/",data,{headers:this.httpHeaders})
 
   }
