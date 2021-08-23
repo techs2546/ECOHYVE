@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderApiServiceService {
-  base_url = "http://192.168.1.36:8000/customer/"   
+  base_url = "http://192.168.1.37:8000/customer/"   
   httpHeaders = new HttpHeaders({'Content-type':'application/json'})
 
 

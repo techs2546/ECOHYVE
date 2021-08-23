@@ -7,6 +7,7 @@ import { CustomerApiServiceService } from './customer-api-service.service';
 import { NgxSpinnerService } from "ngx-spinner";
 
 export interface DialogData {
+  dialogControl: any;
   Id:string
 }
 
@@ -57,7 +58,7 @@ export class CustomersComponent implements OnInit {
   openDialog(id:string): void {
     const dialogRef = this.dialog.open(AssignOrderComponent, {
       width: '1500px',height:'500px',
-      data: {Id:id}
+      data: {Id:id,dialogControl:this.dialog}
     });
 
     dialogRef.afterClosed().subscribe(result => {
